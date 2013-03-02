@@ -6,6 +6,8 @@ block content
     each project in projects
       li
         a(href='/project?name='+project.name)= project.name
+        if(authorised)
+            input(type='checkbox', name='delete',value=project.name)
   ul(id='languages')
     li Switch To:
     each language in languagelist

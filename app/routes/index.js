@@ -9,6 +9,7 @@ exports.index = function(req, res){
       title: 'Home',
       language: req.session.cwl,
       projects: require('../../' + req.session.cwl + '/projects.json'),
-      languagelist: require('../../languages.json')
+      languagelist: require('../../languages.json'),
+      authorised: req.session.auth
   });
 };
