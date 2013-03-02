@@ -1,0 +1,10 @@
+{
+	"foo.c": 
+	{
+		"name": "foo.c",
+		"description": {
+			"short": "Write a function 'foo' such that 'bar' is actually equal to 'baz'",
+			"long": "This is just a demonstration project, it'll get deleted eventually.  It's nonsensical."
+		}
+	}
+}

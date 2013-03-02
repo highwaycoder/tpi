@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  a(id='homelink',href='/') Tiny Projects
+  h1= project.name
+  p(id='short')= project.description.short
+    span(id='more') +more
+  p(id='long')= project.description.long

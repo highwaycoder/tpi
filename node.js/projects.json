@@ -1,0 +1,10 @@
+{
+	"node.js proxy": 
+	{
+		"name": "node.js proxy",
+		"description": {
+			"short": "Write a proxy server using node.js",
+			"long": "A proxy server passes along HTTP requests from the client to the server, and then HTTP responses from the server to the client.  Although express can be used for this, the node.js http module also works well as a proxy."
+		}
+	}
+}

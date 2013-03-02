@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= language
+  ul(id='cwlprojects')
+    each project in projects
+      li
+        a(href='/project?name='+project.name)= project.name
+  ul(id='languages')
+    li Switch To:
+    each language in languagelist
+      li
+        a(href='/?language='+language)= language
