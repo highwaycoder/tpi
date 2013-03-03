@@ -4,8 +4,12 @@
  */
 
 exports.display = function(req, res){
-  req.session.cwl = req.session.cwl || 'node.js';
-  var p = require('../../' + req.session.cwl + '/projects.json')[req.query['name']];
-  res.render('project', { title: p.name,language: req.session.cwl,project: p });
+  if(typeof(req.query['name']) !== undefined) {
+    var p = require('../../projects.json')[req.query['name']];
+    res.render('project', { title: p.name,project: p });
+  } else {
+    res.render('error', { short:'Project Name Missing',long: 'No project name supplied to /project request.' });
+  }
+  
 };
 
