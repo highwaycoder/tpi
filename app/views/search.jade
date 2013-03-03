@@ -1,0 +1,21 @@
+if (typeof(results) !== 'undefined')
+  p#query
+    .query Searched for: #{query.query}
+    ul.lang
+      li Languages
+      each lang in query.lang
+        li= lang
+      each lang in query.nlang
+        li.not= lang
+    ul.tags
+      li Tags
+      each tag in query.tags
+        li= tag
+      each tag in query.ntags
+        li.not= tag
+else
+  form#search
+    fieldset
+      label(for='q')
+      input(type='text', name='q')
+      input(type='submit', value='Search')
