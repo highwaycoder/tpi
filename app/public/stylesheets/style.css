@@ -11,6 +11,8 @@ li {
   list-style-type: none;
 }
 
+/* project page (todo: move to project.css) */
+
 #short {
     position:relative;
     width:50%;
@@ -29,4 +31,15 @@ li {
 
 #more:hover {
     cursor:pointer;
+}
+
+
+/* search box */
+
+#query ul {
+  display:inline;
+}
+
+#search_button:hover {
+  cursor:pointer;
 }

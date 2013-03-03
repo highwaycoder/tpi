@@ -13,6 +13,11 @@ if (typeof(results) !== 'undefined')
         li= tag
       each tag in query.ntags
         li.not= tag
+  //
+    | the 'order' element is just used by the client-side script to order the received data;
+    | the reason it's done on the client side is so that the results can be re-ordered at will without 
+    | having to issue a whole new query
+  .order= query.order
 else
   form#search
     fieldset

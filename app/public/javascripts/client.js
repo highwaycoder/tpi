@@ -1,7 +1,13 @@
 $(function() {
-	var shown = false;
+	var shown = {
+				more: false,
+				search: false
+			},
+			cached = {
+				search:false
+			};
 	$("#more").on('click',function() {
-		if(shown) {
+		if(shown.more) {
 			$("#long").fadeOut('slow',function() {
 				$("#more").html('+more');
 			});
@@ -10,7 +16,31 @@ $(function() {
 				$("#more").html('-less');
 			});
 		}
-		shown = !shown;
+		shown.more = !shown.more;
+	});
+	
+	$("#search_button").on('click',function() {
+		if(!shown.search) {
+			if(cached.search) {
+				$("#search").fadeIn('slow',function() {
+					$("#search_button").html('-hide search');
+					shown.search = true;
+				});
+			} else {
+				$.get('/search',function(result) {
+					$("#search").html(result).hide().fadeIn('slow',function() {
+						$("#search_button").html('-hide search');
+						cached.search = true;
+						shown.search = true;
+					});
+				});
+			}
+		} else {
+			$("#search").fadeOut('slow',function() {
+				$("#search_button").html('+show search');
+				shown.search = false;
+			});
+		}
 	});
 	
 	$("#loginform").submit(function(e) {
@@ -37,4 +67,6 @@ $(function() {
 			$("#loginform").show().html(response);
 		}
 	});
+	
+	
 });
