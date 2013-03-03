@@ -1,0 +1,22 @@
+{
+	"foo.c": 
+	{
+		"name": "foo.c",
+		"langs": "c",
+		"tags": "example,foo,bar",
+		"description": {
+			"short": "Write a function 'foo' such that 'bar' is actually equal to 'baz'",
+			"long": "This is just a demonstration project, it'll get deleted eventually.  It's nonsensical."
+		}
+	},
+	"node.js proxy": 
+	{
+		"name": "node.js proxy",
+		"langs": "node.js",
+		"tags": "networking,proxy,server",
+		"description": {
+			"short": "Write a proxy server using node.js",
+			"long": "A proxy server passes along HTTP requests from the client to the server, and then HTTP responses from the server to the client.  Although express can be used for this, the node.js http module also works well as a proxy."
+		}
+	}
+}
